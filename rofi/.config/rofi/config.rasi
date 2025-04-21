@@ -1,0 +1,6 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+element-text {
+ background-color: inherit;
+ text-color: inherit;
+}

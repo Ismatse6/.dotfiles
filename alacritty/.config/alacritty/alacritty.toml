@@ -1,0 +1,78 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 20.0
+
+[font.bold]
+family = "MesloLGS Nerd Font Mono"
+# family = "CaskaydiaCove Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font Mono"
+# family = "CaskaydiaCove Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS Nerd Font Mono"
+# family = "CaskaydiaCove Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS Nerd Font Mono"
+# family = "CaskaydiaCove Nerd Font"
+style = "Regular"
+# BEGIN WAL
+[colors.primary]
+background = '#0B0808'
+foreground = '#f4dad2'
+
+[colors.cursor]
+text   = '#0B0808' # Apply background color to color of text inside cursor
+cursor = '#f4dad2' # Apply foreground color to color of cursor
+
+[colors.vi_mode_cursor]
+text    = '#0B0808' # Same as above
+cursor  = '#f4dad2'
+
+[colors.search.matches]
+foreground = '#0B0808' # Same as above
+background = '#f4dad2' # Apply bright/white color to bg color of matching search
+
+[colors.search.focused_match]
+foreground = 'CellBackground'
+background = 'CellForeground'
+
+[colors.line_indicator]
+foreground = 'None'
+background = 'None'
+
+[colors.footer_bar]
+foreground = '#aa9893'
+background = '#f4dad2'
+
+[colors.selection]
+text       = 'CellBackground'
+background = 'CellForeground'
+
+[colors.normal]
+black   = '#0B0808'
+red     = '#DA5528'
+green   = '#EB6F54'
+yellow  = '#C5853B'
+blue    = '#EF8E6E'
+magenta = '#8B5C97'
+cyan    = '#F8AD9A'
+white   = '#f4dad2'
+
+[colors.bright]
+black   = '#aa9893'
+red     = '#DA5528'
+green   = '#EB6F54'
+yellow  = '#C5853B'
+blue    = '#EF8E6E'
+magenta = '#8B5C97'
+cyan    = '#F8AD9A'
+white   = '#f4dad2'
+# END WAL
