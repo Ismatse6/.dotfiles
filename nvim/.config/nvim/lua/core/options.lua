@@ -1,4 +1,4 @@
-vim.wo.number = true 
+vim.wo.number = true
 vim.o.relativenumber = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.wrap = false
@@ -31,7 +31,7 @@ vim.o.cmdheight = 1
 vim.o.breakindent = true
 vim.o.updatetime = 50
 vim.o.colorcolumn = '80'
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 400
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.undofile = true

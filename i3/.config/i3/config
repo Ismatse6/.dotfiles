@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 set $terminal "alacritty"
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -115,9 +115,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -192,18 +192,20 @@ bindsym $mod+r mode "resize"
 
 # My customization
 
-assign [instance="web.whatsapp.com"] $ws3
-assign [class="Microsoft-edge"] $ws1
-assign [class="Alacritty"] $ws2
+assign [instance="web.whatsapp.com"] $ws1
+assign [class="Microsoft-edge"] $ws2
+assign [class="Alacritty"] $ws3
 
 # execs
 
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
+exec --no-startup-id xmodmap -e "keycode 99 = Print"
 exec_always --no-startup-id picom --experimental-backends --config $HOME/.config/picom/picom.conf 
 exec --no-startup-id feh --bg-scale $HOME/Pictures/wallhaven-l8eejy.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
+exec_always --no-startup-id setxkbmap -layout us,es -option grp:rwin_toggle,compose:ralt
 exec --no-startup-id $terminal
 exec --no-startup-id $HOME/.local/bin/whatsapp-edge.sh
 exec --no-startup-id microsoft-edge 
@@ -231,4 +233,4 @@ client.placeholder      $c7     $c7    $c7    $c7       $c7
 client.background       $c7
 
 # Bindigs
-bindsym Print exec NOW=$(date +%d-%b-%Y_%H-%M-%S) && maim --format png --select > ~/screenshots/screenshot_$NOW.png && xclip -selection clip -t image/png ~/screenshots/screenshot_$NOW.png
+bindsym Print exec flameshot gui -p ~/Pictures/Screenshots

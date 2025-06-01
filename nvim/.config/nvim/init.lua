@@ -28,4 +28,5 @@ require('lazy').setup {
     require 'plugins.harpoon',
     require 'plugins.mini',
     -- require 'plugins.vim-tmux-navigator',
+    require 'plugins.neotest',
 }

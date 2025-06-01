@@ -16,6 +16,14 @@ return {
         'tpope/vim-rhubarb',
     },
     {
+        -- Neotest python adapter
+        'nvim-neotest/neotest-python',
+    },
+    {
+        -- Primeagen VimBeGood
+        'ThePrimeagen/vim-be-good',
+    },
+    {
         -- Autoclose parentheses, brackets, quotes, etc.
         'windwp/nvim-autopairs',
         event = 'InsertEnter',
