@@ -17,6 +17,12 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', '=ap', "ma=ap'a")
 vim.keymap.set('n', '<leader>zig', '<cmd>LspRestart<cr>')
 
+-- Seleccionar todo el archivo (Visual mode)
+vim.keymap.set('n', 'vie', 'ggVG', { desc = 'Select entire file' })
+
+-- Yank (copiar) todo el archivo al portapapeles del sistema
+vim.keymap.set('n', 'yie', 'ggVGy', { desc = 'Yank entire file' })
+
 -- greatest remap ever
 vim.keymap.set('x', '<leader>p', [["_dP]])
 

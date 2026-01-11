@@ -42,6 +42,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl set 5%-
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 
@@ -184,6 +187,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Custom bindigs
+bindsym Print exec flameshot gui -p ~/Pictures/Screenshots
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -203,12 +209,13 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 exec --no-startup-id xmodmap -e "keycode 99 = Print"
 exec_always --no-startup-id picom --experimental-backends --config $HOME/.config/picom/picom.conf 
-exec --no-startup-id feh --bg-scale $HOME/Pictures/wallhaven-l8eejy.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallhaven-l8eejy.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 exec_always --no-startup-id setxkbmap -layout us,es -option grp:rwin_toggle,compose:ralt
 exec --no-startup-id $terminal
 exec --no-startup-id $HOME/.local/bin/whatsapp-edge.sh
 exec --no-startup-id microsoft-edge 
+for_window [class="Yad" title="yad-calendar"] floating enable
 
 gaps inner 10
 gaps outer 0
@@ -220,9 +227,9 @@ default_border pixel 2
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $c1 i3wm.color1  #DA5528  # rojo‑naranja
-set_from_resource $c5 i3wm.color5  #8B5C97  # lila
-set_from_resource $c7 i3wm.color7  #f4dad2  # crema
+set_from_resource $c1 i3wm.color1  #DA5528
+set_from_resource $c5 i3wm.color5  #8B5C97
+set_from_resource $c7 i3wm.color7  #f4dad2
 
 # class                 border  backgr. text  indicator child_border
 client.focused          $c1     $c1    $c7    $c5       $c1
@@ -232,5 +239,3 @@ client.urgent           $c1     $c1    $c7    $c1       $c1
 client.placeholder      $c7     $c7    $c7    $c7       $c7
 client.background       $c7
 
-# Bindigs
-bindsym Print exec flameshot gui -p ~/Pictures/Screenshots
