@@ -4,44 +4,73 @@ return { -- Highlight, edit, and navigate code
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 
-          'python',
-          'javascript',
-          'typescript',
-          'sql',
-          'toml',
-          'json',
-          'java',
-          'go',
-          'yaml',
-          'markdown',
-          'markdown_inline',
-          'make',
-          'make',
-          'dockerfile',
-          'regex',
-          'bash',
-          'c',
-          'diff',
-          'html',
-          'lua',
-          'luadoc',
-          'markdown',
-          'markdown_inline',
-          'query',
-          'vim',
-          'vimdoc' 
-      },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
-      highlight = {
-        enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
+        ensure_installed = {
+            'python',
+            'javascript',
+            'typescript',
+            'sql',
+            'toml',
+            'json',
+            'java',
+            'go',
+            'yaml',
+            'markdown',
+            'markdown_inline',
+            'make',
+            'make',
+            'dockerfile',
+            'regex',
+            'bash',
+            'c',
+            'diff',
+            'html',
+            'lua',
+            'luadoc',
+            'markdown',
+            'markdown_inline',
+            'query',
+            'vim',
+            'vimdoc',
+        },
+        -- Autoinstall languages that are not installed
+        auto_install = true,
+        highlight = {
+            enable = true,
+            -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
+            --  If you are experiencing weird indenting issues, add the language to
+            --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+            additional_vim_regex_highlighting = { 'ruby' },
+        },
+        indent = { enable = true, disable = { 'ruby' } },
+        textobjects = {
+            move = {
+                enable = true,
+                set_jumps = false,
+                goto_next_start = {
+                    [']b'] = { query = '@code_cell.inner', desc = 'next code block' },
+                },
+                goto_previous_start = {
+                    ['[b'] = { query = '@code_cell.inner', desc = 'previous code block' },
+                },
+            },
+            select = {
+                enable = true,
+                lookahead = true,
+                keymaps = {
+                    ['ib'] = { query = '@code_cell.inner', desc = 'in block' },
+                    ['ab'] = { query = '@code_cell.outer', desc = 'around block' },
+                },
+            },
+            swap = {
+                enable = true,
+                swap_next = {
+                    ['<leader>sbl'] = '@code_cell.outer',
+                },
+                swap_previous = {
+                    ['<leader>sbh'] = '@code_cell.outer',
+                },
+            },
+        },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:

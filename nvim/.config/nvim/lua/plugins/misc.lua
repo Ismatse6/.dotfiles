@@ -48,4 +48,14 @@ return {
         -- Github Copilot
         'github/copilot.vim',
     },
+    {
+        'preservim/vim-markdown', -- conceal markdown links
+    },
+    {
+        'tadmccorkle/markdown.nvim', -- follow links (C-Enter)
+        ft = 'markdown',
+        opts = {
+            mappings = { link_follow = '<C-Enter>' },
+        },
+    },
 }

@@ -29,4 +29,10 @@ require('lazy').setup {
     require 'plugins.mini',
     -- require 'plugins.vim-tmux-navigator',
     require 'plugins.neotest',
+    require 'plugins.image',
+    require 'plugins.molten',
+    require 'plugins.jupytext',
+    require 'plugins.markdown-preview',
+    require 'plugins.render-markdown',
+    require 'plugins.quarto',
 }
