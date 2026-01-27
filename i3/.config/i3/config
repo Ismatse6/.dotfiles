@@ -120,8 +120,8 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 "
 set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4"
+set $ws3 "3 "
+set $ws4 "4 󱚞"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -201,6 +201,7 @@ bindsym Print exec flameshot gui -p ~/Pictures/Screenshots
 assign [instance="web.whatsapp.com"] $ws1
 assign [class="Microsoft-edge"] $ws2
 assign [class=$terminal] $ws3
+assign [class="Chat-gpt"] $ws4
 
 # execs
 
@@ -215,6 +216,7 @@ exec_always --no-startup-id setxkbmap -layout us,es -option grp:rwin_toggle,comp
 exec --no-startup-id $terminal
 exec --no-startup-id $HOME/.local/bin/whatsapp-edge.sh
 exec --no-startup-id microsoft-edge 
+exec --no-startup-id chat-gpt
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 gaps inner 10
